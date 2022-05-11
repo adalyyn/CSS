@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실습문제</title>
+</head>
+<body>
+    <fieldset>
+    <legend>납품자 정보</legend>
+    <form action="" method="get">
+        <ol>
+            <li>
+                <label for="name">납품자명(필수) : </label>
+                <input type="text" name="name" id="name" required>
+            </li><br>
+            <li>
+                <label for="email">email(필수) : </label>
+                <input type="text" name="email" id="email" placeholder="answer@naver.com" required>
+            </li><br>
+            <li>
+                <label for="url">홈페이지 : </label>
+                <input type="url" name="url" id="url" value="http://">
+            </li><br>
+            <li>
+                <label for="place">지역</label>
+                <select name="place" id="place">
+                    <option value="seoul">서울</option>
+                    <option value="busan" selected>부산</option>
+                    <option value="jeju">제주</option>
+                </select>
+            </li>        
+        </ol>
+    </fieldset>
+    
+    <fieldset>
+        <legend>납품정보</legend>
+        <or>
+            <li>
+                <label for="productName">상품명(필수) : </label>
+                <input type="text" name="productName" id="prodeuctName" required>
+            </li><br>
+            <li>
+                <label for="count">납품수량(필수) : </label>
+                <input type="number" name="count" id="count" placeholder="최소 100" minlength="100" required>
+            </li><br>
+            <li>
+                <label for="grade">납품등급(필수) : </label>
+                <input type="range" name="grade" id="grade" required>
+            </li><br>
+            <li>
+                <label for="memo">기타사항 : </label>
+                <textarea name="memo" id="memo" cols="30" rows="3">
+                    
+                </textarea>
+            </li><br>
+        </or>
+    </fieldset>
+    <br>
+    <button type="submit">send message</button>
+    </form>
+    <!--수정-->
+</body>
+</html>

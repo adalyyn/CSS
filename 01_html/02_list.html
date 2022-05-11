@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">  <!-- IE를 사용한다면 edge(최신)으로 해줌-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 브라우저에 노출되는 부분(viewport) -> 너비를 기기에 맞게 맞춰줌 -->
+    <title>list</title>
+</head>
+<body>
+    <h1>목록관련</h1>
+    <!-- unordered list ul > li -->
+    <!-- ul>li*3 -->
+    <!-- bullet 스타일 바꿀 수-->
+    <ul style="list-style: square;">
+        <li id="li-html5">HTML5</li> <!--동일한 아이디를 가진 2개의 태그가 있을 수 없다.-->
+        <li>CSS3</li>
+        <li>
+            Javascript2015
+            <ol>
+                <li>React</li>
+                <li>Vue.js</li>
+            </ol>
+        </li>
+    </ul>
+
+    <!-- ordered list -->
+    <ol style="list-style: decimal;" start = "3">   <!-- ol 태그에만 있는 start속성 -->
+        <li>HTML5</li>
+        <li>CSS3</li>
+        <li>Javascript2015</li>
+    </ol>
+
+    <!--
+        모든 태그에는 공통된 속성 grobal attribude를 가지고 있다.
+        https://www.w3schools.com/tags/ref_standardattributes.asp
+    -->
+
+
+    <!--
+        설명 목록 태그
+        dl (description list)
+            dt (define title)
+            dd (define description)
+            dt
+            dd
+            dd
+            ...
+    -->
+    <!-- dl>dt+dd -->
+    <dl>
+        <dt>HTML</dt>
+        <dd>Hyper Text Markup Language</dd>
+        <dt>CSS</dt>
+        <dd>Cascade <mark>Style</mark> Sheet</dd>
+        <!-- dt+dd*2 : dt1개랑 형제 dd 2개 -->
+        <dt>JS</dt>
+        <dd>Javascript</dd>
+        <dd>Ecmascript</dd>
+    </dl>
+
+
+</body>
+</html>

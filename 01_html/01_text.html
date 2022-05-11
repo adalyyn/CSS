@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>text</title>
+</head>
+<body>
+    <h1>문자관련</h1>
+    <a href="index.html">인덱스로 돌아가기</a>
+
+    <!-- 공부할때 유의할 점 (헷갈리면 요소검사(F12 -> ctrl + shift + c)에서 마우스 호버 해보기)
+        block 요소 - 화면 끝까지 영역을 차지, 다음영역을 쓸 때 개행해서 쓸 수밖에 없음
+        inline요소 - content만큼만 영역을 차지
+    -->
+
+    <!-- heading h1 ~ h6 : 주로 3까지 많이 씀 -->
+    <h1>HelloWorld</h1>
+    <h2>HelloWorld</h2>
+    <h3>HelloWorld</h3>
+    <h4>HelloWorld</h4>
+    <h5>HelloWorld</h5>
+    <h6>HelloWorld</h6>
+
+    <!--h1{HelloWorld} : 입력값까지 {문자열}-->
+    <h1>HelloWorld</h1>
+
+    <!--h1{Hello$}*6    $부분이 1부터 증가함 -->
+    <!--h${HelloWorld}*6-->
+    <h1>Hello1</h1>
+    <h2>Hello2</h2>
+    <h3>Hello3</h3>
+    <h4>Hello4</h4>
+    <h5>Hello5</h5>
+    <h6>Hello6</h6>
+
+    
+    <!-- paragragh 문단태그 p : 개행처리 해줌 -->
+    <p>안녕하세요.</p>
+    <p>반갑습니다.</p>
+    <p>좋은 밤 보내세요</p>
+    <!-- p>lorem 아무글로나 채워줌 -->
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, tempore incidunt animi esse beatae, quo magnam repellendus aliquid reprehenderit nostrum eligendi dignissimos nisi minima fugit quaerat fugiat dolor cum eaque.</p>
+
+    <!-- span 짧은 문장 태그 -->
+    <!-- 공백/개행 문자는 딱 하나의 공백문자로 처리한다. 개행많이 작성해도 랜더되는건 개행1번 html작성과 화면에 랜더되는것은 다르다 -->
+    <span>안녕하세요.</span>
+    <br> <!--html의 개행태그 br-->
+    <span>반갑습니다.</span>
+    <br>
+    <span>span을썼습니다.</span>
+    <br>
+
+
+    <!-- 공백문자 &nbsp; -->
+    <!-- 단순 텍스트로는 계층구조 파악이 안되니 이런 사용은 지양하자. -->
+    안녕하세요&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    반갑습니다
+    태그를 안썼습니다
+
+    <!-- <P> "특수문자" & <p>태그</p> </P> : html ampersand code (이스케이프 처리)는 &로 -->
+    <P>&quot;특수문자&quot; &amp; &lt;p&gt;태그&lt&#47p&gt;</P>
+
+
+    <!--pre-formatted 태그 pre : 작성한 그대로 표현해 줌, 폰트는 나중에 스타일에서 바꿀 수 있다. -->
+    <pre>안녕
+        잘가
+        반가웠어~
+    </pre>
+
+    <!-- 수평선 태그 hr -->
+    <hr>
+
+    <!--
+        semantic tag
+        - 의미가 있는 태그
+        - 정보가 가진 성격에 적절한 태그를 사용할 것. 그에 맞는 태그들을 이미 만들어 놓음.
+        - html 파일의 큰 특징중의 하나
+    -->
+
+    <!-- phrase tag -->
+
+    <!-- blockquote 인용구 태그 , 사이트 속성은 시각화되지 않는다. -->
+    <!-- screen reader, 평상시에 포탈 검색봇이 사이트 속성을 수집해서 DB화 해놓고 후에 거기에서 찾아온다. 시각장애인을 위해서도.. -->
+    <blockquote cite = "https://www.naver.com">소 잃고 외양간 고친다</blockquote>
+
+    <!-- acronym 축약어 : 마우스 호버했을때 보여주는 정보-->
+    <acronym title = "Hyper Text Markup Language">HTML</acronym>
+    <abbr title = "Hyper Text Markup Language">HTML</abbr>
+    
+    <!-- code 코드 : 프로그래밍언어라고 알려줌 <pre>랑 쓰면 좋음. -->
+    <pre>
+        <code>
+            function foo(a, b){
+                return a+ b;
+            }
+        </code>
+    </pre>
+
+
+    <!-- keyboard 키값 : 키보드 입력값 -->
+    취소하려면 <kbd>Ctrl</kbd>+<kbd>Z</kbd>를 누르세요. <br>
+
+
+    <!-- phrase tag -->
+    <!-- 강조효과 -->
+    <em>기울여서 강조</em><br>
+    <strong>볼드체로 강조</strong><br>
+    <mark>하이라이트 효과로 강조</mark><br>
+    <del>취소선 처리</del><br>
+    <ins>밑줄로 강조</ins><br>
+
+    <!-- em>strong{몹시강조!!!}  : 중첩사용가능-->
+    <em><strong>몹시강조!!!</strong></em>   
+    
+    <br>
+    <!--시맨틱 태그가 아님. HTML5이전의 태그, 어떤 부가적인 정보도 전달하지 못한다. 시맨틱태그를 애용하자-->
+    <b>볼드체 효과</b>
+    <i>이탤릭체 효과</i>
+
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>

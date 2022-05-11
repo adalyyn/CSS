@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>링크관련</title>
+</head>
+<body>
+    <h1>링크관련</h1>
+    <!--
+        a 태그의 href속성(hyper reference)에 명시된 문서로 이동이 가능하다.
+        - 절대주소 : / 또는 protocol
+        - 상대주소 : 현재 페이지 기준으로 이동할 경로를 평가(evaluation, 연산된 결과를 의미)
+        손가락 모양으로 마우스 커서가 바뀜
+
+        target 속성
+            _self 현재 페이지에서 이동
+            _blank 빈 페이지에서 이동 = 새 페이지에서 열어라
+    -->
+
+    <a href="https://naver.com">네이버</a>
+    <a href="/01_html/index.html" target="_self">인덱스로(절대주소) 타겟속성 안씀</a>
+    <a href="./index.html" target="_blank">인덱스로(상대주소) 타겟속성 씀</a>
+    <!--http://192.168.35.211:5500/01_html/06_link.html-->
+
+
+    <!-- 이미지 클릭해서 이동하기 -->
+    <a href="index.html" title="인덱스 페이지로 이동" >
+        <img src="../sample/image/hyunta.jpg" style="width:300px">
+    </a>
+
+    <h2>한 페이지의 특정 부분으로 이동 #bookmark #anchor</h2>
+    <!-- ul>(li>a)*3 -->
+    <ul>
+        <li><a href="#header1">Hello World1</a></li>
+        <li><a href="#header2">Hello world2</a></li>
+        <li><a href="#header3">Hello world3</a></li>
+        <!-- 블럭잡고 -> 우클릭 -> '하이라이트 링크 복사' : 본문의 실제 내용으로 이동해줌-->
+        <li><a href="http://192.168.35.211:5500/01_html/06_link.html#:~:text=hello%20world3-,Lorem%20ipsum%20dolor%20sit%20amet%20consectetur%20adipisicing,-elit.%20Doloribus%20magnam">내용참조</a></li>
+    </ul>
+
+
+    <!-- (h3#header${hello world$}+p>lorem*3)*3 -->
+    <h3 id="header1">hello world1</h3>
+    <p><span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima deserunt explicabo placeat rerum laborum ab incidunt sit mollitia? Praesentium commodi velit consequuntur voluptatem hic, qui at quidem ullam fugit itaque?</span><span>Deleniti asperiores necessitatibus aperiam, sed laudantium accusamus numquam ab cumque quisquam, molestias distinctio soluta nemo esse reiciendis fugit impedit. Animi, laudantium voluptate laboriosam eum eaque maiores voluptatum at ullam iure?</span><span>At atque cumque labore eos, quos possimus voluptas obcaecati similique facilis ipsum, perferendis perspiciatis a vel id optio deserunt pariatur beatae modi autem laboriosam quaerat. Neque id dolores molestias at.</span></p>
+    <h3 id="header2">hello world2</h3>
+    <p><span>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi quos optio, repellendus et architecto laudantium, illum deleniti harum explicabo sequi accusamus minima. Commodi est itaque tenetur, error officia consectetur autem?</span><span>Provident excepturi totam, dolor maxime at iste voluptatibus id, asperiores porro ducimus doloremque facilis ea numquam assumenda cum alias fugit similique! Est natus sit nostrum deleniti. Iste saepe aperiam sequi?</span><span>Tempore totam nisi magnam dicta ipsa sequi eius dignissimos et? Odio non consequuntur, ipsum similique consectetur tempora et repellendus. Fuga accusamus iure itaque ducimus iusto illo veniam exercitationem eos totam?</span></p>
+    <h3 id="header3">hello world3</h3>
+    <p><span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus magnam minus aspernatur ipsa, porro perspiciatis deleniti harum repellendus voluptate minima, atque recusandae voluptatibus adipisci! Libero, sunt voluptates. Pariatur, ut deleniti.</span><span>Quisquam nihil molestiae illo dolores officiis cumque doloremque, sed sit pariatur sapiente odio asperiores molestias assumenda, quo optio, nulla dolorum earum maxime similique excepturi corrupti neque id veniam. Cumque, dolores.</span><span>Quod cumque ab laudantium sunt numquam provident quae eius esse obcaecati sint, minus facere asperiores fuga repudiandae necessitatibus modi voluptatem omnis pariatur corrupti deserunt. Nulla illo eum ut maxime esse!</span></p>
+
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <a href="#top">맨위로</a>
+</body>
+</html>

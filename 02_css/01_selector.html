@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>선택자</title>
+</head>
+<body>
+    <h1 title="선택자">선택자</h1>
+    <!-- .은 클래스 : 태그를 그룹핑하기 위한 것-->
+    <!-- div>p#p$.group1{HelloWorld$}*5 -->
+    <div>
+        <p id="p1" class="group1" title="안녕1">HelloWorld1</p>
+        <p id="p2" class="group1">HelloWorld2</p>
+        <p id="p3" class="group2">HelloWorld3</p>
+        <p id="p4" class="group2" title="안녕4">HelloWorld4</p>
+        <p id="p5" class="group1 group2">HelloWorld5</p>
+    </div>
+    <style>
+        /* 태그명으로 스타일먹을 태그고르기 */
+        /* p{
+            color : blueviolet;
+        } */
+
+        /* 아이디
+        #p3{
+            color : green;
+        } */
+
+        /*클래스명 - 태그를 그룹핑하기 위한 것, 같은 클래스 일때는 우선순위가 같기 때문에 나중에 작성된 스타일이 적용된다.*/
+        /* .group1 {color : hotpink;}
+        .group2 {color : yellowgreen;} */
+
+        /* 클래스 값이 2개인 애 : 상세히 적을수록 적용순위가 높음 */
+        /* .group1.group2{color:blue;} */
+
+        /* 선택자 나열 */
+        #p1, #p3 {
+            text-decoration: underline;
+        }
+
+        /* 타이틀 속성이 있는 태그만 적용하기 */
+        [title] {
+            background-color: lightsalmon;
+        }
+
+        /* 타이틀 속성이 있는 p 태그만 적용하기 : 태그+속성, 태그+클래스값, 태그+아이디값 혼용가능 */
+        /* p[title] {
+            background-color: lightsalmon;
+        } */
+
+        /* p.group2{
+            font-weight: bold;
+        } */
+
+        /* 타이틀 중에서도 안녕1 */
+        /* [title=안녕1] {
+            color:white;
+        } */
+    </style>
+
+    <hr>
+
+
+    <!-- #parent>h2+ul>li*2 -->
+    <div id="parent">
+        <h2>h2 안녕</h2>
+        <ul>
+            <li>li Hello</li>
+            <li>li 니하오</li>
+        </ul>
+        <!-- div#child>h2+ul>li*2 -->
+        <div id="child">
+            <h2>h2 잘가</h2>
+            <ul>
+                <li>li Byebye</li>
+                <li>li 짜이찌엔</li>
+            </ul>
+        </div>
+    </div>
+    <style>
+        /* 부모 찾는 문법은 없음 */
+        /* 직계자식 */
+        /* parent의 직계자식인 h2를 찾아서 스타일 먹이기 */
+        #parent > h2 {
+            background-color: yellow;
+        }
+        /* 후손 */
+        #parent h2 {
+            text-decoration: underline;
+        }
+
+        #parent > ul > li {
+            color: red;
+            text-decoration: red underline ; 
+        }
+
+        #child > ul {
+            color: green;
+            text-decoration: green underline;
+        }
+    </style>
+
+    <hr>
+    <!-- div>span#front$*5 -->
+    <div>
+        <span id="front1">html</span>
+        <span id="front2">css</span>
+        <span id="front3">javascript</span>
+        <span id="front4">jquery</span>
+        <span id="front5">geolocation</span>
+        <strong id ="front6">webstorage</strong>
+    </div>
+
+    <style>
+        /* 형제요소 : 같은부모를 공유, 이후 요소만 대상으로 함. 이전요소는 접근불가 
+            다음 형제요소 하나*/
+        #front3 + span {
+            color:chartreuse;
+        }
+
+        /* #front3 + p 는 적용되지 않는다. */
+        /* #front3 + * : 프론트3 이후 모든태그에 적용*/
+
+        /* 다음형제요소 모두중에 span태그만, strong태그는 적용안됨 */
+        #front3 ~ span {
+            text-decoration: line-through;
+        }
+
+    </style>
+
+
+    <hr>
+
+    <fieldset>
+        <legend>속성관련</legend>
+        <input type="text"><br>
+        <input type="text" name="username"><br>
+        <input type="email" name="useremail"><br>
+        <input type="text"name = "petname"><br>
+        <input type="text" name="myusage"><br>
+
+    </fieldset>
+
+    <style>
+        /*속성*/
+        /* [name] {
+            background-color: lightsalmon;
+        } */
+/* 
+        [type=text] {
+            background-color: tomato;
+        } */
+
+        /* name 이 유저로 시작 ^= */
+        /* [name^=user] {
+            background-color: red;
+        } */
+
+        /* name으로 끝남 $= */
+        /* [name$=user] {
+            background-color: red;
+        } */
+
+        /*특정문자열 포함여부 *= */
+        [name *= us] {
+            background-color: aqua;
+        }
+    </style>
+
+
+<!--가상선택자-->
+    <!-- div>(p>lorem)*2 -->
+    <div>
+        <p id = "clickme">
+            <a href="http://www.innerbody.com/htm/body.html">ipsum dolor sit amet, consectetur</a> ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae nostrum distinctio sit ad eligendi optio laboriosam voluptas blanditiis repellat ipsam, eius fugiat quia minus eaque eos reprehenderit ea quisquam. Accusantium?</p>
+        <p id = "hoverme">Dolore vel aliquam eos eius. Quasi, illum esse, qui nam dignissimos repellat explicabo commodi, quo perferendis voluptatibus dolores molestias sunt velit laborum aspernatur sit soluta fugiat consequuntur placeat ipsa aliquid!</p>
+    </div>
+
+    <style>
+        /* 가상클래스(pseudo-class) 선택자 : */
+        #clickme:active {
+            background-color: deeppink;
+            color: beige;
+        }
+
+        #hoverme:hover {
+            background-color: chartreuse;
+            color: black;
+        }
+
+        #clickme a {text-decoration: none;}
+        #clickme a:link {color :aqua} /*방문전*/
+        #clickme a:visited {color :violet} /*방문후*/
+
+        #clickme a:hover {color :rgb(26, 10, 245); text-decoration: underline;} /*호버시*/
+        #clickme a:active {color :rgb(195, 225, 26)} /*클릭시*/
+    </style>
+
+
+    <hr>
+
+    
+    <div class="wrapper">
+        <input type="text" name="nickname" id="nickname">
+        <br>
+        <input type="checkbox" name="furuit" id="apple"><label for="apple">사과</label>
+        <input type="checkbox" name="furuit" id="pear"><label for="pear">배</label>
+        <input type="checkbox" name="furuit" id="peach"><label for="peach">복숭아</label>
+    </div>
+    
+    
+    <style>
+    /* 가상클래스 선택자 : */
+    [name=nickname] {
+        outline: none;
+        border-top : none;
+        border-right : none;
+        border-left:none;
+        border-bottom:1px solid black;
+    }
+
+    [name=nickname]:focus {
+        border-bottom-width:3px; 
+    }
+
+    [name=fruit]:checked {
+        width: 50px;
+        height: 50px;
+    }
+
+    [name=fruit]:checked + label{
+        font-size: 50px;
+    }
+    </style>
+
+
+    <!-- div>p{CSS$}*5 -->
+    <div id="container">
+        <p>CSS1</p>
+        <p>CSS2</p>
+        <p>CSS3</p>
+        <p>CSS4</p>
+        <p>CSS5</p>
+        <pre>CSS6</pre>
+    </div>
+
+    <style>
+        /* 위치관련 가상 클래스 선택자, #container 둘 다 써줘야 한다. */
+        /* #container :first-child, #container :last-child{
+            color:lime;
+        } */
+
+        #container pre:last-child {
+            color : red;
+        }
+
+        /* 마지막은 p태그가 아니어서 안먹음
+        #container p:last-child {
+            color : red;
+        } */
+
+        /* 1-based index : 1부터 2번재 인자 */
+        /* #container :nth-child(2){
+            color: aqua;
+        } */
+
+        /* 배수처리도 가능 : 2, 4, 6번째 , 홀수만 하고 싶으면 2n + 1 */
+        /* #container :nth-child(2n){
+            color: aqua;
+        } */
+
+        /* 위치와 타입관련 가상클래스 선택자 */
+        /* p 태그중에 첫번째, 마지막 */
+        /* #container p:first-of-type, #container p:last-of-type {
+            color: slateblue;
+        } */
+
+        /* 함수형태도 존재 */
+        #container p:nth-of-type(2n) {
+            color: brown;
+        }
+
+    </style>
+    
+    <hr>
+
+    <!-- div.box>p{안녕$}*5 -->
+    <div class="box">
+        <p>안녕1</p>
+        <p>안녕2</p>
+        <p>안녕3</p>
+        <p>안녕4</p>
+        <p>안녕5</p>
+    </div>
+
+
+    <style>
+        /* 안녕4의 백그라운드와 폰트 색상 바꾸기 */
+        .box :nth-of-type(4) {
+            color: chartreuse;
+            background-color: blue;
+        }
+
+        /* 부정/반전 선택자 : 안녕4빼고 다 바꾸고 싶다면 */
+        /* :not(selector) */
+        .box :not(:nth-of-type(4)) {
+            color: rgb(10, 14, 6);
+            background-color: rgb(94, 94, 100);
+        }
+
+        /* 루트 선택자, 단독으로 사용 : 최상위 태그(html)를 찾음, 자식요소에서 오버라이드 하지 않았다면 물려받은 색깔을 쓰게 된다. 주로 기본설정으로 많이 쓴다. */
+        /* :root {
+            color: purple;
+        } */
+
+    </style>
+
+
+    <!-- div>(p>lorem)*3 -->
+    <div id="articles">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim officia neque facere perspiciatis ab animi placeat iusto accusantium! Aut praesentium soluta molestiae quos nesciunt minima quaerat sit animi dignissimos explicabo!</p>
+        <p>Vitae fuga sequi rem iusto. Nulla tempore quam tempora nam porro reprehenderit temporibus suscipit ratione voluptas saepe, illum, blanditiis ipsam ab deserunt recusandae architecto qui. Quaerat optio tenetur nostrum et!</p>
+        <p>Repellendus mollitia culpa cum saepe, harum necessitatibus maiores accusamus totam eaque ipsa, illo animi in voluptatum! Molestiae enim voluptas veniam quos, quas quod nihil culpa temporibus sequi harum impedit aut?</p>
+    </div>
+    <style>
+        /* 가상요소선택자 :: pesudo-element : 고려하지 않은 요소를 추가할때 많이 쓰임 */
+
+        /* 블락잡았을때 ::selection */
+        #articles ::selection{
+            background-color: cadetblue;
+            color: red;
+        }
+
+        #articles ::first-letter {
+            font-size: 2em;
+        }
+
+        /* 내용직전에 끼워넣어준다 */
+        #articles p::before {
+            content : '🤷‍♂️'
+        }
+
+        #articles p::after {
+            content : '🤦‍♂️'
+        }
+
+
+
+    </style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>

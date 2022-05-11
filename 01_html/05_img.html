@@ -20,7 +20,7 @@
         -alt 대체텍스트 : 이미지를 못찾거나, 시각적 확인이 불가능한 경우 사용할 텍스트
     -->
 
-    <!-- 절대주소는 / 또는 프로토콜로 시작한다. -->
+    <!-- 절대주소는 /(같은서버에 있는 경우, origin) 또는 프로토콜로 시작한다. -->
     <img src="http://192.168.35.211:5500/sample/image/flower1.PNG" alt="꽃1" title="꽃1">
     <img src="/sample/image/flower2.PNG" alt="꽃2" title="꽃2">
 
@@ -40,6 +40,8 @@
     -->
     <img src="../sample/image/flower1.PNG" alt="꽃1" title="꽃1">
 
+    <!--이진데이터를 base64인코팅 : file api사용시 유용하다.-->
+
     <h2>절대크기 px</h2>
     <!--화면너비를 바꿔도 고정-->
     <!-- div>img[ser=../sample/image/flower$.PNG]*5 -->
@@ -51,7 +53,7 @@
         <img src="../sample/image/flower5.PNG" alt="" style = "width : 50px">
     </div>
 
-    <h2>상대크기 %</h2>
+    <h2>상대크기 % em. rem. vh. vw</h2>
     <!--부모너비(화면너비)의 18%씩 나눠갖겠다는 것-->
     <div>
         <img src="../sample/image/flower1.PNG" alt="" style = "width : 18%">

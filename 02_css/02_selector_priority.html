@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>선택자 우선순위</title>
+</head>
+<body>
+    <h1>선택자 우선순위</h1>
+    <!-- 공백있을시 "", '' -->
+    <!-- p#myp.group[title='오늘의 한문장']>lorem -->
+    <p id="myp" class="group" title="오늘의 한문장" style="color:darkorchid">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, omnis? Eos officia minima sunt tempore nemo cupiditate fuga beatae voluptates, a in, deleniti ipsa eum libero, reiciendis molestias. Cupiditate, qui!</p>
+
+    <style>
+        /* 
+        (같은 속성일때 우선순위 높음, 작성순서는 상관없다.)
+        !important
+        inline 속성
+
+        등급
+        a : #id
+        b : .class, attribute, pseudo-class
+        c : tag, pseudo-element        
+        (우선순위 낮음)
+        */
+
+        /*
+        비슷한 우선순위를 가졌다면 상세하게 쓸 수록 우선순위가 높다.
+        외우지 말고, 개발도구에서 체크하면서 수정하기
+        여기서 호버해봐도 나온다. a,b,c
+        */
+
+        p {color:burlywood !important;}
+        .group {color: aqua;}
+        #myp {color: brown;}
+    </style>
+</body>
+</html>

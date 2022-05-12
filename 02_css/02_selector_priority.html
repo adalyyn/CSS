@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>선택자 우선순위</h1>
-    <!-- 공백있을시 "", '' -->
+    <!-- 속성에서 공백있을시 "", ''로 감싸준다 -->
     <!-- p#myp.group[title='오늘의 한문장']>lorem -->
     <p id="myp" class="group" title="오늘의 한문장" style="color:darkorchid">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, omnis? Eos officia minima sunt tempore nemo cupiditate fuga beatae voluptates, a in, deleniti ipsa eum libero, reiciendis molestias. Cupiditate, qui!</p>
 
@@ -16,9 +16,9 @@
         /* 
         (같은 속성일때 우선순위 높음, 작성순서는 상관없다.)
         !important
-        inline 속성
+        inline 속성 p태그 안에 style써넣기
 
-        등급
+        금은동 메달 등급이라고 생각. 은메달 4개보다 금메달1개가 순위 높음
         a : #id
         b : .class, attribute, pseudo-class
         c : tag, pseudo-element        
